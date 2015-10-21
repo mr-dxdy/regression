@@ -1,3 +1,3 @@
 require 'mkmf'
 
-create_makefile("regression")
+create_makefile("regression/regression")

@@ -4,9 +4,7 @@ Regression
 ## Installation
 
 ```bash
-cd ext/regression
-ruby extconfig.rb
-cp regression.so ../../lib/
+rake gem
 ```
 
 ## Usage
@@ -20,7 +18,3 @@ order = 1
 Regression.polyfit(x, y, order)
 # => [0.675454830824306, -0.619147643027931]
 ```
-
-## TODO
-
-* Add [rake-compiler](https://github.com/rake-compiler/rake-compiler).

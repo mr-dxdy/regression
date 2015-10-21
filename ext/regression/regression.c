@@ -204,6 +204,8 @@ rb_polyfit(VALUE rb_self, VALUE rb_x_array, VALUE rb_y_array, VALUE rb_order)
 
 void Init_regression(void)
 {
-  VALUE rb_mRegression = rb_define_module("Regression");
+  VALUE rb_mRegression;
+
+  rb_mRegression = rb_const_get(rb_cObject, rb_intern("Regression"));
   rb_define_module_function(rb_mRegression, "polyfit", rb_polyfit, 3);
 }
