@@ -4,7 +4,7 @@ Regression
 ## Installation
 
 ```bash
-rake gem
+gem "regression"
 ```
 
 ## Usage
