@@ -6,7 +6,7 @@ describe Regression do
       status = true
 
       for i in 0..expected.length - 1
-        if (actual[i] - expected[i]).abs > 0.001
+        if (actual[i] - expected[i]).abs > 0.01
           status = false
           break
         end
@@ -17,6 +17,26 @@ describe Regression do
   end
 
   subject { Regression }
+
+  context 'polynom of order 4' do
+    # f(x) = 0.0101x4 + -0.001x3 + -1.34x2 + 1.68x + 28.38
+
+    let(:x_array) do
+      [-7, -4, 0, 2, 6]
+    end
+
+    let(:y_array) do
+      [-24.44, 2.85, 28.38, 26.51, 2.84]
+    end
+
+    let(:result) do
+      [28.38, 1.68, -1.34, -0.001, 0.0101]
+    end
+
+    it "should" do
+      expect(subject.polyfit(x_array, y_array, 4)).to have_elements_as(result)
+    end
+  end
 
   context 'example from matlab' do
     # see http://matlab.exponenta.ru/spline/book1/7.php
